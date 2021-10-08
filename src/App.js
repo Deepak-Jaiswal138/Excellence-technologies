@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Todo from './todo/Todo'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import Users from './users/Users';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import Main from './Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+       <Switch>
+         <Route exact path="/" component={Main} />
+         <Route path="/todo" component={Todo} />
+         <Route path="/users" component={Users} />
+         </Switch>
+    </BrowserRouter>
   );
 }
 
